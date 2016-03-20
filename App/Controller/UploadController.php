@@ -1,0 +1,55 @@
+<?php
+
+namespace App\Controller;
+
+
+class UploadController
+{
+    private $pdo = null;
+
+    public function __construct(PDO $pdo)
+    {
+        $this->pdo = $pdo;
+    }
+
+    public function showUpload()
+    {
+        require VIEW_DIR . '/pages/Upload.php';
+    }
+
+    public function uploadFile()
+    {
+        if(isset($_FILES['image'])){
+            $errors= array();
+            //$file_name = $_FILES['image']['name'];
+            $file_size =$_FILES['image']['size'];
+            $file_tmp =$_FILES['image']['tmp_name'];
+            //$file_type=$_FILES['image']['type'];
+            $file_ext=strtolower(end(explode('.',$_FILES['image']['name'])));
+
+            $extensions= array("jpeg","jpg","png", "gif");
+
+            if(in_array($file_ext,$extensions)=== false){
+                $errors[]="extension not allowed, please choose a JPEG or PNG file.";
+            }
+
+            if($file_size > 2097152){
+                $errors[]='File size must be excately 2 MB';
+            }
+
+            if(empty($errors)==true){
+                require("PDOConnecte.php");
+
+                $sth =$this->pdo->pdo->prepare('Insert into `images`(`image` ,`title`) VALUES (:image,:title)');
+                $sth->bindValue(':image', file_get_contents($file_tmp), \PDO::PARAM_STR);
+                $sth->bindValue(':title',htmlentities($_POST['filename']), \PDO::PARAM_STR);
+                $sth->execute();
+
+                header('Location: Gallery');
+            }else{
+                print_r($errors);
+            }
+        }
+    }
+
+}
