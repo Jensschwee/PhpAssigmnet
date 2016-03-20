@@ -8,6 +8,8 @@
 
 namespace App\Controller;
 
+use App\Model\User;
+
 
 class UserController
 {
@@ -22,7 +24,10 @@ class UserController
     public function showUserList()
     {
         require VIEW_DIR . '/pages/Userlist.php';
-    }
+        $this->getUsers();
+        require VIEW_DIR . '/footer.php';
+
+}
 
     public function showAddUser()
     {
@@ -31,19 +36,15 @@ class UserController
 
     public function addUser()
     {
-        $Username = $_POST['Username'];
-        $Password = $_POST['Password'];
-
-        $sth =$this->pdo->pdo->prepare('Insert into `users`(`username` ,`password`, `createdBy`, `active` ) VALUES (:user,:password, :createdBy, FALSE)');
-        $sth->bindValue(':user', $Username, \PDO::PARAM_STR);
-        $sth->bindValue(':password', password_hash($Password, PASSWORD_BCRYPT), \PDO::PARAM_STR);
-        $sth->bindValue(':createdBy',$_SESSION['username'] , \PDO::PARAM_STR);
-        $sth->execute();
-
-        header('Location: ShowUsers');
+        if (isset($_POST['Username']) && isset($_POST['Password']))
+        {
+            $user = new User($this->pdo, $_POST['Username'], $_POST['Password'], $_SESSION['username'], false);
+            $user->createImageToDB();
+            header('Location: ShowUsers');
+        }
     }
 
-    public function Users()
+    public function getUsers()
     {
         $sth =$this->pdo->pdo->prepare('select username, active, createdBy from `users`');
         $sth->execute();
@@ -62,13 +63,13 @@ class UserController
                 echo htmlentities($createdBy);
                 echo '</td><td>';
                 if ($active)
-                    echo '<img src="image/Checkmark.png" width="25" height="25">';
+                    echo '<img src=/assets/Images/Checkmark.png width="25" height="25">';
                 else if(!$active)
-                    echo'<img src="image/crossmark.png" width="20" height="20">';
+                    echo'<img src=/assets/Images/crossmark.png width="20" height="20">';
                 echo '</td></tr>';
             }
         }
-
+        echo '</table></div>';
     }
 
 }

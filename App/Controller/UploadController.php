@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Model\Image;
 
 class UploadController
 {
@@ -38,13 +39,8 @@ class UploadController
             }
 
             if(empty($errors)==true){
-                require("PDOConnecte.php");
-
-                $sth =$this->pdo->pdo->prepare('Insert into `images`(`image` ,`title`) VALUES (:image,:title)');
-                $sth->bindValue(':image', file_get_contents($file_tmp), \PDO::PARAM_STR);
-                $sth->bindValue(':title',htmlentities($_POST['filename']), \PDO::PARAM_STR);
-                $sth->execute();
-
+                $image = New Image($this->pdo,$file_tmp,$_POST['filename']);
+                $image->createImageToDB();
                 header('Location: Gallery');
             }else{
                 print_r($errors);

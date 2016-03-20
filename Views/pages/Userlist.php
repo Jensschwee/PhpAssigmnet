@@ -22,7 +22,4 @@
 				 Active
 				</td>
 			</tr>
-			<!--<?php require ("ViewUsers.php"); ?>-->
-		</table>
-		</div>
-		<?php require VIEW_DIR . '/footer.php'; ?>
+

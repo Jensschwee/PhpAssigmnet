@@ -20,10 +20,13 @@ class GalleryController
         /**************
          *  Show View  *
          **************/
+        require VIEW_DIR . '/header.php';
         require VIEW_DIR . '/pages/Gallery.php';
+        $this->GetImages();
+        require VIEW_DIR . '/footer.php';
     }
 
-    public function Image()
+    public function GetImages()
     {
         $sth =$this->pdo->pdo->prepare('SELECT * FROM `images`');
         $sth->execute();
