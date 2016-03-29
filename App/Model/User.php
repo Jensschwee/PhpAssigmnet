@@ -28,13 +28,13 @@ class User
         $this->id = $id;
     }
 
-    public function deleteImageToDB(){
+    public function deleteUserToDB(){
         $sth =$this->pdo->pdo->prepare('Delete from `users` where id = :id');
         $sth->bindValue(':id',$this->id, \PDO::PARAM_INT);
         $sth->execute();
     }
 
-    public function updateImageToDB(){
+    public function updateUserToDB(){
         $sth =$this->pdo->pdo->prepare('Update `users` set username = :username, password = :password, createdBy = :createdBy, active = :active where id = :id');
         $sth->bindValue(':user', $this->Username, \PDO::PARAM_STR);
         $sth->bindValue(':password', password_hash($this->password, PASSWORD_BCRYPT), \PDO::PARAM_STR);
@@ -44,10 +44,10 @@ class User
         $sth->execute();
     }
 
-    public function createImageToDB()
+    public function createUserToDB()
     {
         $sth =$this->pdo->pdo->prepare('Insert into `users`(`username` ,`password`, `createdBy`, `active` ) VALUES (:user,:password, :createdBy, :active)');
-        $sth->bindValue(':user', $this->Username, \PDO::PARAM_STR);
+        $sth->bindValue(':user', $this->username, \PDO::PARAM_STR);
         $sth->bindValue(':password', password_hash($this->password, PASSWORD_BCRYPT), \PDO::PARAM_STR);
         $sth->bindValue(':active', $this->active, \PDO::PARAM_BOOL);
         $sth->bindValue(':createdBy',$this->createdBy , \PDO::PARAM_STR);

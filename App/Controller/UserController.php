@@ -39,7 +39,7 @@ class UserController
         if (isset($_POST['Username']) && isset($_POST['Password']))
         {
             $user = new User($this->pdo, $_POST['Username'], $_POST['Password'], $_SESSION['username'], false);
-            $user->createImageToDB();
+            $user->createUserToDB();
             header('Location: ShowUsers');
         }
     }

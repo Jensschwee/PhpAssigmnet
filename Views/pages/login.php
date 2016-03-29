@@ -12,7 +12,6 @@
 			httpRequest.addEventListener('load', function () {
 				if (httpRequest.status >= 200 && httpRequest.status < 300) {
 					var res = JSON.parse(httpRequest.responseText);
-					console.log(res);
 					if(res)
 					{
 						window.location.replace("Gallery");
