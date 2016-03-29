@@ -1,5 +1,4 @@
 <?php
-require("PDOConnecte.php");
 $sth =$pdo->prepare('select username, active, createdBy from `users`');
 $sth->execute();
 $result = $sth->fetchAll(PDO::FETCH_ASSOC);
