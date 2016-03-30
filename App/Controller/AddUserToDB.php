@@ -1,6 +1,4 @@
 <?php
-require("PDOConnecte.php");
-
 $Username = $_POST['Username'];
 $Password = $_POST['Password'];
 
