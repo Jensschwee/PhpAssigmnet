@@ -27,7 +27,7 @@ $loader->addNamespace('App', __DIR__ . '/../App');
 $loader->register();
 
 
-$pdo = new \App\Controller\PDO("root", "password",'mysql:dbname=phpserver;host=127.0.0.1');
+$pdo = new \App\Controller\PDO("root", "root",'mysql:dbname=phpserver;host=127.0.0.1');
 $pdo->createPDO();
 
 // Initialize and configure the dependency injection container
@@ -51,6 +51,7 @@ $router->addRoute('POST', '/Upload', ['App\\Controller\\UploadController', 'uplo
 $router->addRoute('GET', '/ShowUsers', ['App\\Controller\\UserController', 'showUserList']);
 $router->addRoute('GET', '/AddUser', ['App\\Controller\\UserController', 'showAddUser']);
 $router->addRoute('POST', '/AddUser', ['App\\Controller\\UserController', 'addUser']);
+$router->addRoute('DELETE', '/DeleteImage', ['App\\Controller\\GalleryController', 'deleteImage']);
 
 
 

@@ -22,7 +22,7 @@ class Image
         $this->id = $id;
     }
 
-    public function deleteImageToDB(){
+    public function deleteImageFromDB(){
         $sth =$this->pdo->pdo->prepare('Delete from `images`where id = :id');
         $sth->bindValue(':id',$this->id, \PDO::PARAM_INT);
         $sth->execute();

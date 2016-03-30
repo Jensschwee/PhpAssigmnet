@@ -47,7 +47,7 @@ class User
     public function createImageToDB()
     {
         $sth =$this->pdo->pdo->prepare('Insert into `users`(`username` ,`password`, `createdBy`, `active` ) VALUES (:user,:password, :createdBy, :active)');
-        $sth->bindValue(':user', $this->Username, \PDO::PARAM_STR);
+        $sth->bindValue(':user', $this->username, \PDO::PARAM_STR);
         $sth->bindValue(':password', password_hash($this->password, PASSWORD_BCRYPT), \PDO::PARAM_STR);
         $sth->bindValue(':active', $this->active, \PDO::PARAM_BOOL);
         $sth->bindValue(':createdBy',$this->createdBy , \PDO::PARAM_STR);
