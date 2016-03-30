@@ -38,7 +38,21 @@ input[type=submit]:hover {
 	background-color: #0099ff;
 }
 
+input[type=deleteImage] {
+	background-color: #0000cc;
+	color: #ffffff;
+	border-radius: 10px;
+	cursor: pointer;
+	position: relative;
+	border-style: solid;
+}
+
+input[type=deleteImage]:hover {
+	background-color: #0099ff;
+}
+
 .imageDiv{
+	width: 150px;
 	text-align: justify;
 	display: inline-block;
 	padding: 5px;
@@ -46,7 +60,6 @@ input[type=submit]:hover {
 }
 
 .imageDiv img{
-
 	width: 100px;
 	height: 100px;
 	padding: 5px;
