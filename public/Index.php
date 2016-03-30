@@ -53,8 +53,7 @@ $router->addRoute('GET', '/AddUser', ['App\\Controller\\UserController', 'showAd
 $router->addRoute('POST', '/AddUser', ['App\\Controller\\UserController', 'addUser']);
 $router->addRoute('POST', '/DeleteUser', ['App\\Controller\\UserController', 'deleteUser']);
 $router->addRoute('GET', '/EditUser', ['App\\Controller\\UserController', 'showEditUser']);
-
-
+$router->addRoute('POST', '/UpdateUser', ['App\\Controller\\UserController', 'updateUser']);
 
 $uri = rawurldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 $route = $router->match($_SERVER['REQUEST_METHOD'], $uri);

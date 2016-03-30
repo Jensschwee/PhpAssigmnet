@@ -96,5 +96,20 @@ class UserController
             $username = $_GET['username'];
             require VIEW_DIR . '/pages/editUser.php';
         }
+        else
+            header('Location: /ShowUsers');
+    }
+
+    public function updateUser()
+    {
+        if(isset($_POST['Username']) && isset($_POST['OldUsername']))
+        {
+            $sth =$this->pdo->pdo->prepare('Update `users` set `username` = :NewUsername where `username` = :OldUsername ');
+            $sth->bindValue(':OldUsername', $_POST['OldUsername'], \PDO::PARAM_STR);
+            $sth->bindValue(':NewUsername', $_POST['Username'], \PDO::PARAM_STR);
+            $sth->execute();
+        }
+        header('Location: /ShowUsers');
+
     }
 }
