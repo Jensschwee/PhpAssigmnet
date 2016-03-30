@@ -14,6 +14,5 @@
     <div><label for="OldUserName">Old Username: </label><input  name="OldUsername" value=<?php echo $username; ?> readonly /> </div>
     <div><label for="username">Username: </label><input name="Username" /> </div>
     <input type="submit" value="Edit"/></div>
-
 </form>
 <?php require VIEW_DIR . "/footer.php";?>
