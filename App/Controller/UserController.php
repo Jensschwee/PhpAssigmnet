@@ -55,14 +55,10 @@ class UserController
             {
                 $user = new User($this->pdo,$row['username'],$row['password'], $row['createdBy'], $row['active'], $row['id']);
 
-                $username = $row['username'];
-                $active = $row['active'];
-                $createdBy = $row['createdBy'];
                 echo '<form action="DeleteUser" method="post">';
                 echo '<tr><td>';
                 echo '<label>' .htmlentities($user->getUsername()). '</label>';
                 echo '<input type="hidden" name="Username" value=\''.htmlentities($user->getUsername()).'\'>';
-                //echo htmlentities($user->getUsername());
                 echo '</td><td>';
                 echo htmlentities($user->getCreatedBy());
                 echo '</td><td>';
@@ -71,7 +67,7 @@ class UserController
                 else
                     echo'<img src=/assets/Images/crossmark.png width="20" height="20">';
                 echo '</td><td>';
-                echo '<input type="submit" onclick="deleteUser(\''.$user->getId().'\');" value="Delete"/>';
+                echo '<button type="submit">Delete</button>';
                 echo '</form>';
                 echo '</td></tr>';
             }
@@ -89,7 +85,4 @@ class UserController
         }
         header('Location: /ShowUsers');
     }
-
-
-
 }
