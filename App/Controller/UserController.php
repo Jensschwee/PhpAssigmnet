@@ -46,30 +46,50 @@ class UserController
 
     public function getUsers()
     {
-        $sth =$this->pdo->pdo->prepare('select username, active, createdBy from `users`');
+        $sth =$this->pdo->pdo->prepare('select * from `users`');
         $sth->execute();
         $result = $sth->fetchAll(\PDO::FETCH_ASSOC);
         if(!is_null($result))
         {
             foreach($result as $row)
             {
+                $user = new User($this->pdo,$row['username'],$row['password'], $row['createdBy'], $row['active'], $row['id']);
+
                 $username = $row['username'];
                 $active = $row['active'];
                 $createdBy = $row['createdBy'];
-
+                echo '<form action="DeleteUser" method="post">';
                 echo '<tr><td>';
-                echo htmlentities($username);
+                echo '<label>' .htmlentities($user->getUsername()). '</label>';
+                echo '<input type="hidden" name="Username" value=\''.htmlentities($user->getUsername()).'\'>';
+                //echo htmlentities($user->getUsername());
                 echo '</td><td>';
-                echo htmlentities($createdBy);
+                echo htmlentities($user->getCreatedBy());
                 echo '</td><td>';
-                if ($active)
+                if ($user->getActive())
                     echo '<img src=/assets/Images/Checkmark.png width="25" height="25">';
-                else if(!$active)
+                else
                     echo'<img src=/assets/Images/crossmark.png width="20" height="20">';
+                echo '</td><td>';
+                echo '<input type="submit" onclick="deleteUser(\''.$user->getId().'\');" value="Delete"/>';
+                echo '</form>';
                 echo '</td></tr>';
             }
         }
         echo '</table></div>';
     }
+
+    public function deleteUser()
+    {
+        if (isset($_POST['Username']))
+        {
+            $sth =$this->pdo->pdo->prepare('Delete from `users` where `username` = :username ');
+            $sth->bindValue(':username', $_POST['Username'], \PDO::PARAM_STR);
+            $sth->execute();
+        }
+        header('Location: /ShowUsers');
+    }
+
+
 
 }

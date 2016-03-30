@@ -21,5 +21,8 @@
 				<td>
 				 Active
 				</td>
+				<td>
+					Delete
+				</td>
 			</tr>
 

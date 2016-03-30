@@ -28,6 +28,49 @@ class User
         $this->id = $id;
     }
 
+    /**
+     * @return null
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return null
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * @return null
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * @return null
+     */
+    public function getCreatedBy()
+    {
+        return $this->createdBy;
+    }
+
+    /**
+     * @return null
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+
+
+
+
     public function deleteUserToDB(){
         $sth =$this->pdo->pdo->prepare('Delete from `users` where id = :id');
         $sth->bindValue(':id',$this->id, \PDO::PARAM_INT);

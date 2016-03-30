@@ -51,6 +51,7 @@ $router->addRoute('POST', '/Upload', ['App\\Controller\\UploadController', 'uplo
 $router->addRoute('GET', '/ShowUsers', ['App\\Controller\\UserController', 'showUserList']);
 $router->addRoute('GET', '/AddUser', ['App\\Controller\\UserController', 'showAddUser']);
 $router->addRoute('POST', '/AddUser', ['App\\Controller\\UserController', 'addUser']);
+$router->addRoute('POST', '/DeleteUser', ['App\\Controller\\UserController', 'deleteUser']);
 
 
 
