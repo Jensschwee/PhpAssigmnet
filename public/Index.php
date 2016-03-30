@@ -52,6 +52,7 @@ $router->addRoute('GET', '/ShowUsers', ['App\\Controller\\UserController', 'show
 $router->addRoute('GET', '/AddUser', ['App\\Controller\\UserController', 'showAddUser']);
 $router->addRoute('POST', '/AddUser', ['App\\Controller\\UserController', 'addUser']);
 $router->addRoute('POST', '/DeleteUser', ['App\\Controller\\UserController', 'deleteUser']);
+$router->addRoute('GET', '/EditUser', ['App\\Controller\\UserController', 'showEditUser']);
 
 
 

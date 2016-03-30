@@ -68,6 +68,9 @@ class UserController
                     echo'<img src=/assets/Images/crossmark.png width="20" height="20">';
                 echo '</td><td>';
                 echo '<button type="submit">Delete</button>';
+                echo '</td><td>';
+                echo '<button type="button" onclick="editUser(\''.htmlentities($user->getUsername()).'\')">Edit</button>';
+
                 echo '</form>';
                 echo '</td></tr>';
             }
@@ -84,5 +87,14 @@ class UserController
             $sth->execute();
         }
         header('Location: /ShowUsers');
+    }
+
+    public function showEditUser()
+    {
+        if(isset($_GET['username']))
+        {
+            $username = $_GET['username'];
+            require VIEW_DIR . '/pages/editUser.php';
+        }
     }
 }

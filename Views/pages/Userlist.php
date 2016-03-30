@@ -1,4 +1,10 @@
 <?php require VIEW_DIR . '/header.php'; ?>
+<script>
+	function editUser(userName)
+	{
+		window.location = "EditUser?username=" + userName;
+	}
+</script>
 	<body>
 		<ul>
 			<li><a href="/">Login</a></li>
@@ -23,6 +29,9 @@
 				</td>
 				<td>
 					Delete
+				</td>
+				<td>
+					Edit
 				</td>
 			</tr>
 
