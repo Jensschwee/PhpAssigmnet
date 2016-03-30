@@ -12,7 +12,6 @@
 			httpRequest.addEventListener('load', function () {
 				if (httpRequest.status >= 200 && httpRequest.status < 300) {
 					var res = JSON.parse(httpRequest.responseText);
-					console.log(res);
 					if(res)
 					{
 						window.location.replace("Gallery");
@@ -34,6 +33,7 @@
 		<form onsubmit="return false;">
 			<div><label for="Username">Username:</label> <input id="Username" name="Username"/> </div>
 			<div><label for="Password">Password:</label> <input id="Password" name="Password" type="password"/></div>
-			<button type="Submit" onclick="Login()">Login</button>
+			<button type="Submit" onclick="Login()">Login
+			<button type="reset">Reset</button>
 		</form>
 		<?php require VIEW_DIR . '/footer.php'; ?>

@@ -1,9 +1,9 @@
 <?php 
-	if(!isset($_SESSION['username']))
+	/*if(!isset($_SESSION['username']))
 	{
-		header('Location: //');
+		header('Location: /');
 		exit;
-	}
+	}*/
 ?>
 <!DOCTYPE HTML>
 <html lan="en">
