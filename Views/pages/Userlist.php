@@ -52,12 +52,12 @@
 				else
 					echo'<img src=/assets/Images/crossmark.png width="20" height="20">';
 				echo '</td><td>';
-				echo '<form action="DeleteUser" method="POST">';
+				echo '<form action="DeleteUser" method="POST" class="formMin">';
 				echo '<input type="hidden" name="Username" value=\''.htmlentities($username).'\'>';
 				echo '<button type="Submit">Delete</button>';
 				echo '</form>';
 				echo '</td><td>';
-				echo '<form action="EditUser" method="POST">';
+				echo '<form action="EditUser" method="POST" class="formMin">';
 				echo '<input type="hidden" name="EditUsername" value=\''.htmlentities($username).'\'>';
 				echo '<button type="Submit">Edit</button>';
 				echo '</td></tr>';

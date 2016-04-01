@@ -5,6 +5,9 @@ h1 {
 label input{
 	margin: 2px;
 }
+.formMin{
+	width: 60px;
+}
 
 form{
 	width: 400px;
