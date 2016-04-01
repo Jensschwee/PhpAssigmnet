@@ -34,4 +34,36 @@
 					Edit
 				</td>
 			</tr>
+		<?php
+		if(!is_null($result))
+		{
+			foreach($result as $row)
+			{
+				$username = $row['username'];
+				$createdBy = $row['createdBy'];
+				$active = $row['active'];
+				echo '<tr><td>';
+				echo '<label>' .htmlentities($username). '</label>';
+				echo '</td><td>';
+				echo htmlentities($createdBy);
+				echo '</td><td>';
+				if ($active)
+					echo '<img src=/assets/Images/Checkmark.png width="25" height="25">';
+				else
+					echo'<img src=/assets/Images/crossmark.png width="20" height="20">';
+				echo '</td><td>';
+				echo '<form action="DeleteUser" method="POST">';
+				echo '<input type="hidden" name="Username" value=\''.htmlentities($username).'\'>';
+				echo '<button type="Submit">Delete</button>';
+				echo '</form>';
+				echo '</td><td>';
+				echo '<form action="EditUser" method="POST">';
+				echo '<input type="hidden" name="EditUsername" value=\''.htmlentities($username).'\'>';
+				echo '<button type="Submit">Edit</button>';
+				echo '</td></tr>';
+			}
+		}
+		?>
+		</table></div>
+		<?php require VIEW_DIR . '/footer.php'; ?>
 

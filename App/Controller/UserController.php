@@ -23,9 +23,8 @@ class UserController
 
     public function showUserList()
     {
+        $result = $this->getUsers();
         require VIEW_DIR . '/pages/Userlist.php';
-        $this->getUsers();
-        require VIEW_DIR . '/footer.php';
 
 }
 
@@ -49,33 +48,7 @@ class UserController
         $sth =$this->pdo->pdo->prepare('select * from `users`');
         $sth->execute();
         $result = $sth->fetchAll(\PDO::FETCH_ASSOC);
-        if(!is_null($result))
-        {
-            foreach($result as $row)
-            {
-                $user = new User($this->pdo,$row['username'],$row['password'], $row['createdBy'], $row['active'], $row['id']);
-
-                echo '<form action="DeleteUser" method="post">';
-                echo '<tr><td>';
-                echo '<label>' .htmlentities($user->getUsername()). '</label>';
-                echo '<input type="hidden" name="Username" value=\''.htmlentities($user->getUsername()).'\'>';
-                echo '</td><td>';
-                echo htmlentities($user->getCreatedBy());
-                echo '</td><td>';
-                if ($user->getActive())
-                    echo '<img src=/assets/Images/Checkmark.png width="25" height="25">';
-                else
-                    echo'<img src=/assets/Images/crossmark.png width="20" height="20">';
-                echo '</td><td>';
-                echo '<button type="submit">Delete</button>';
-                echo '</td><td>';
-                echo '<button type="button" onclick="editUser(\''.htmlentities($user->getUsername()).'\')">Edit</button>';
-
-                echo '</form>';
-                echo '</td></tr>';
-            }
-        }
-        echo '</table></div>';
+        return $result;
     }
 
     public function deleteUser()
@@ -91,9 +64,9 @@ class UserController
 
     public function showEditUser()
     {
-        if(isset($_GET['username']))
+        if(isset($_POST['EditUsername']))
         {
-            $username = $_GET['username'];
+            $username = $_POST['EditUsername'];
             require VIEW_DIR . '/pages/editUser.php';
         }
         else

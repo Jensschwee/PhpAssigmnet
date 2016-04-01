@@ -20,10 +20,8 @@ class GalleryController
         /**************
          *  Show View  *
          **************/
-        require VIEW_DIR . '/header.php';
+        $result = $this->getImages();
         require VIEW_DIR . '/pages/Gallery.php';
-        $this->getImages();
-        require VIEW_DIR . '/footer.php';
     }
 
     public function getImages()
@@ -31,26 +29,7 @@ class GalleryController
         $sth =$this->pdo->pdo->prepare('SELECT * FROM `images`');
         $sth->execute();
         $result = $sth->fetchAll(\PDO::FETCH_ASSOC);
-
-        foreach($result as $row)
-        {
-            $image = $row['image'];
-            $title = $row['title'];
-            $imageId = $row['id'];
-            echo '<div class="imageDiv">';
-            echo '<img src="data:image/jpeg;base64,'. base64_encode($image) . '"/>';
-            echo '<br/>';
-
-            echo '<form action="DeleteImage" method="post">';
-            echo '<input type="hidden" name="id" value=\''.htmlentities($imageId).'\'>';
-            echo '<button type="submit">Delete</button>';
-            echo '</form>';
-
-            echo '<br/>';
-            echo $title;
-            echo '<br/>';
-            echo '</div>';
-        }
+        return $result;
     }
 
     public function deleteImage() {

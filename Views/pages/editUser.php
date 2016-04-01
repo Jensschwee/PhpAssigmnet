@@ -1,6 +1,4 @@
 <?php require VIEW_DIR . '/header.php'; ?>
-
-<body>
 <ul>
     <li><a href="/">Login</a></li>
     <li><a href="Gallery">Gallery</a></li>
