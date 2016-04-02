@@ -33,7 +33,8 @@
 		<form onsubmit="return false;">
 			<div><label for="Username">Username:</label> <input id="Username" name="Username"/> </div>
 			<div><label for="Password">Password:</label> <input id="Password" name="Password" type="password"/></div>
-			<button type="Submit" onclick="Login()">Login
-			<button type="reset">Reset</button>
+			<br/>
+			<button class="button" type="Submit" onclick="Login()">Login
+			<button style="margin-left: 259px" class="button" type="reset">Reset</button>
 		</form>
 		<?php require VIEW_DIR . '/footer.php'; ?>
