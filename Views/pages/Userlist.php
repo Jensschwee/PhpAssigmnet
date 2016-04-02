@@ -63,6 +63,7 @@
 				echo '<form action="EditUser" method="POST" class="formMin">';
 				echo '<input type="hidden" name="EditUsername" value=\''.htmlentities($username).'\'>';
 				echo '<button type="Submit">Edit</button>';
+				echo '</form>';
 				echo '</td></tr>';
 			}
 		}

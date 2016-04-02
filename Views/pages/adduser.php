@@ -14,6 +14,6 @@
 <form action="AddUser" method="POST">
 	<div><label for="username">Username: </label><input id="username" name="Username" /> </div>
 	<div><label for="password">Password:</label> <input id="password" name="Password" type="password"/></div>
-	<input type="submit"/></div>
+	<button type="submit">Create User</button></div>
 	</form>
 <?php require VIEW_DIR . "/footer.php";?>
