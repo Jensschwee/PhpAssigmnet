@@ -50,11 +50,12 @@
 				echo '</td><td>';
 				echo htmlentities($createdBy);
 				echo '</td><td>';
+				echo '<div class="activeIcon">';
 				if ($active)
 					echo '<img src=/assets/Images/Checkmark.png width="25" height="25">';
 				else
 					echo'<img src=/assets/Images/crossmark.png width="20" height="20">';
-				echo '</td><td>';
+				echo '</div></td><td>';
 				echo '<form action="DeleteUser" method="POST" class="formMin">';
 				echo '<input type="hidden" name="Username" value=\''.htmlentities($username).'\'>';
 				echo '<button class="button" type="Submit">Delete</button>';
