@@ -16,7 +16,7 @@
 		<label for="upload" class="custom-file-upload">
 			Choose a file
 		</label>
-		<input id="upload" type="file"/>
+		<input id="upload" name="image" type="file"/>
 	</div >
 	<br/>
 	<div><label for="filename">File name</label> <input id="filename" name="filename" /></div>
