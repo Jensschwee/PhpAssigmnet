@@ -111,7 +111,6 @@ input[type=deleteImage]:hover {
 	width: 150px;
 	height: 150px;
 	padding: 0px;
-
 }
 
 div {
@@ -157,7 +156,7 @@ li a:hover {
 	display: block;
 	margin:0 auto;
 }
-.UserTabel tr:nth-child(odd){ background-color:#d4e8fc; }
+.UserTabel tr:nth-child(odd){ background-color:#86b6e7; }
 .UserTabel tr:nth-child(even)    { background-color:#ffffff; }
 
 .UserTabel td{
@@ -172,7 +171,7 @@ li a:hover {
 	color:#000000;
 }
 .UserTabel tr:first-child td{
-	background-color:#005fbf;
+	background-color:#4d4d4d;
 	border:1px solid #000000;
 	text-align:center;
 	font-size:18px;
