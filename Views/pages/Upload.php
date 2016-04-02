@@ -16,10 +16,10 @@
 		<label for="upload" class="custom-file-upload">
 			Choose A File
 		</label>
-		<input id="upload" name="image" type="file"/>
+		<input id="upload" name="image" type="file" required/>
 	</div >
 	<br/>
-	<div><label for="filename">File name</label> <input id="filename" name="filename" /></div>
+	<div><label for="filename">File name</label> <input id="filename" name="filename" required /></div>
 	<br/>
 	<button class="button" type="submit"/>Upload Image</button>
 </form>
