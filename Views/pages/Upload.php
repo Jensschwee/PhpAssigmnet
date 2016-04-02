@@ -12,9 +12,9 @@
 </div>
 <h1>Upload</h1>
 <form action="Upload" method="POST" enctype="multipart/form-data">
-	<div><label for="upload">File:</label> <input id="upload" name="image" type="file" /> </div>
-	<div><label for="filename">Name:</label> <input id="filename" name="filename" /></div>
-	<input type="submit"/></input>
+	<div><label for="upload">Choose a file</label> <input id="upload" name="image" type="file" /> </div >
+	<div><label for="filename">File name</label> <input id="filename" name="filename" /></div>
+	<button class="button" type="submit"/>Upload Image</button>
 </form>
 <?php require VIEW_DIR . '/footer.php'; ?>
 
