@@ -50,6 +50,9 @@ input[type="file"] {
 	margin-left: auto;
 	margin-right: auto;
 }
+.imageTitle{
+	text-align: center;
+}
 
 .formMin{
 	width: 80px;
@@ -134,8 +137,9 @@ input[type=deleteImage]:hover {
 }
 
 .imageDiv img{
-	width: 150px;
-	height: 150px;
+	width: 200px;
+	margin: 5px;
+	height: 200px;
 	padding: 0px;
 }
 

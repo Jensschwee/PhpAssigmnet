@@ -21,7 +21,10 @@ foreach($result as $row)
 	echo '<div class="imageDiv">';
 	echo '<img src="data:image/jpeg;base64,'. base64_encode($image) . '"/>';
 	echo '<br/>';
-	echo $title;
+	echo '<div class="imageTitle">';
+	echo '<p>' . $title . '</p>';
+	echo '</div>';
+
 	echo '<br/>';
 	echo '<br/>';
 
