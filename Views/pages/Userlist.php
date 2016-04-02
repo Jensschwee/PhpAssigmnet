@@ -57,12 +57,12 @@
 				echo '</td><td>';
 				echo '<form action="DeleteUser" method="POST" class="formMin">';
 				echo '<input type="hidden" name="Username" value=\''.htmlentities($username).'\'>';
-				echo '<button type="Submit">Delete</button>';
+				echo '<button class="button" type="Submit">Delete</button>';
 				echo '</form>';
 				echo '</td><td>';
 				echo '<form action="EditUser" method="POST" class="formMin">';
 				echo '<input type="hidden" name="EditUsername" value=\''.htmlentities($username).'\'>';
-				echo '<button type="Submit">Edit</button>';
+				echo '<button class="button" type="Submit">Edit</button>';
 				echo '</form>';
 				echo '</td></tr>';
 			}
