@@ -14,7 +14,7 @@
 <form action="UpdateUser" method="POST">
     <div><label for="OldUserName">Old Username </label><input  name="OldUsername" value=<?php echo $username; ?> readonly /> </div>
     <br/>
-    <div><label for="username">Username </label><input name="Username" /> </div>
+    <div><label for="username">Username </label><input name="Username" required/> </div>
     <br/>
     <button class="button" type="submit">Edit</button></div>
 </form>

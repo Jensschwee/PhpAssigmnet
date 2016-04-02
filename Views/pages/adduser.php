@@ -12,9 +12,9 @@
 </div>
 <h1>Add User</h1>
 <form action="AddUser" method="POST">
-	<div><label for="username">Username</label><input id="username" name="Username" /> </div>
+	<div><label for="username">Username</label><input id="username" name="Username" required/> </div>
 	<br/>
-	<div><label for="password">Password</label> <input id="password" name="Password" type="password"/></div>
+	<div><label for="password">Password</label> <input id="password" name="Password" type="password" required/></div>
 	<br/>
 	<button class="button" type="submit">Create User</button></div>
 	</form>

@@ -31,8 +31,8 @@
 	<body>
 		<h1>Login</h1>
 		<form onsubmit="return false;">
-			<div><label for="Username">Username:</label> <input id="Username" name="Username"/> </div>
-			<div><label for="Password">Password:</label> <input id="Password" name="Password" type="password"/></div>
+			<div><label for="Username" required>Username:</label> <input id="Username" name="Username"/> </div>
+			<div><label for="Password" required>Password:</label> <input id="Password" name="Password" type="password"/></div>
 			<br/>
 			<button class="button" type="Submit" onclick="Login()">Login
 			<button style="margin-left: 259px" class="button" type="reset">Reset</button>
