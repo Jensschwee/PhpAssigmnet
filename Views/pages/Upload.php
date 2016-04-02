@@ -12,7 +12,12 @@
 </div>
 <h1>Upload</h1>
 <form action="Upload" method="POST" enctype="multipart/form-data">
-	<div><label for="upload">Choose a file</label> <input id="upload" name="image" type="file" /> </div >
+	<div>
+		<label for="upload" class="custom-file-upload">
+			Choose a file
+		</label>
+		<input id="upload" type="file"/>
+	</div >
 	<br/>
 	<div><label for="filename">File name</label> <input id="filename" name="filename" /></div>
 	<br/>
