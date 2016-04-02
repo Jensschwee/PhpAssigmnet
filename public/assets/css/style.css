@@ -19,6 +19,7 @@ body {
 
 .button:hover {
 	background-color: #0099ff;
+	cursor: pointer;
 }
 
 label input{
@@ -39,6 +40,7 @@ label input{
 
 .custom-file-upload:hover {
 	background-color: #0099ff;
+	cursor: pointer;
 }
 
 input[type="file"] {
