@@ -11,4 +11,9 @@
     </div>
 </div>
 <h1>HTTP Error 404</h1>
+<h3>404 Not Found</h3>
+<br/>
+<p>The web server cannot find the file or script you asked for. plase check the URL to ensure that the path is correct</p>
+<br/>
+<p>Please cntact the server's administra if this problem persists</p>
 <?php require VIEW_DIR . '/footer.php'; ?>
