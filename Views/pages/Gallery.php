@@ -27,7 +27,7 @@ foreach($result as $row)
 
 	echo '<form action="DeleteImage" method="post">';
 	echo '<input type="hidden" name="id" value=\''.htmlentities($imageId).'\'>';
-	echo '<button style="margin-left: 130px" class="button" type="submit">Delete</button>';
+	echo '<button style="margin-left: 5px" class="button" type="submit">Delete</button>';
 	echo '</form>';
 
 
