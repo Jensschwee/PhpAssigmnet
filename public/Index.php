@@ -64,7 +64,7 @@ $route = $router->match($_SERVER['REQUEST_METHOD'], $uri);
 
 if ($route === null) {
     $route = [
-        'handle' => ['App\\Controller\\ErrorController'],
+        'handle' => ['App\\Controller\\ErrorController', 'error404'],
         'arguments' => []
     ];
 }
