@@ -20,17 +20,14 @@ foreach($result as $row)
 	$imageId = $row['id'];
 	echo '<div class="imageDiv">';
 	echo '<img src="data:image/jpeg;base64,'. base64_encode($image) . '"/>';
-	echo '<br/>';
 	echo '<div class="imageTitle">';
-	echo '<p>' . $title . '</p>';
+	echo '<p style="margin-top: 0px">' . $title . '</p>';
 	echo '</div>';
 
-	echo '<br/>';
-	echo '<br/>';
 
 	echo '<form action="DeleteImage" method="post">';
 	echo '<input type="hidden" name="id" value=\''.htmlentities($imageId).'\'>';
-	echo '<button class="button" type="submit">Delete</button>';
+	echo '<button style="margin-left: 130px" class="button" type="submit">Delete</button>';
 	echo '</form>';
 
 
