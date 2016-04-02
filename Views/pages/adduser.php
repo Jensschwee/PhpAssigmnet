@@ -13,6 +13,7 @@
 <h1>Add User</h1>
 <form action="AddUser" method="POST">
 	<div><label for="username">Username</label><input id="username" name="Username" /> </div>
+	<br/>
 	<div><label for="password">Password</label> <input id="password" name="Password" type="password"/></div>
 	<br/>
 	<button class="button" type="submit">Create User</button></div>
