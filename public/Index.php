@@ -27,7 +27,7 @@ $loader->addNamespace('App', __DIR__ . '/../App');
 $loader->register();
 
 
-$pdo = new \App\Controller\PDO("root", "password",'mysql:dbname=phpserver;host=127.0.0.1');
+$pdo = new \App\Controller\PDO("root", "root",'mysql:dbname=phpserver;host=127.0.0.1');
 $pdo->createPDO();
 
 // Initialize and configure the dependency injection container

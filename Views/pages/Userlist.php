@@ -6,14 +6,17 @@
 	}
 </script>
 	<body>
-		<ul>
-			<li><a href="/">Login</a></li>
-			<li><a href="Gallery">Gallery</a></li>
-			<li><a href="Upload">Upload</a></li>
-			<li><a href="ShowUsers" class="active">Userlist</a></li>
-			<li><a href="AddUser">Add user</a></li>
-			<li><a href="Logout">Logout</a></li>
-		</ul>
+		<div id="menu_outer">
+			<div class="menu_inner">
+				<ul>
+					<li><a href="Gallery">Gallery</a></li>
+					<li><a href="Upload">Upload</a></li>
+					<li><a href="ShowUsers" class="active">Userlist</a></li>
+					<li><a href="AddUser">Add user</a></li>
+					<li><a href="Logout">Logout</a></li>
+				</ul>
+			</div>
+		</div>
 		<h1>User List</h1>
 		<div class="UserTabel">
 		<table>

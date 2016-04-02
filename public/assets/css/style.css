@@ -2,11 +2,42 @@ h1 {
 	 text-align : center;
 }
 
+body {
+	margin: 0px;
+}
+
 label input{
 	margin: 2px;
 }
 .formMin{
 	width: 60px;
+}
+
+#menu_outer {
+	background-color: #4d4d4d;
+}
+
+.menu_inner {
+	display: table;
+	margin: 0 auto;
+}
+
+#footer_bar {
+	background: #4d4d4d;
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+}
+
+#footer_paragraph {
+	color: white;
+	padding-right: 10px;
+}
+
+#gallery_wrapper {
+	padding:10px;
+	display: table;
+	margin: 0 auto;
 }
 
 form{
@@ -58,14 +89,13 @@ input[type=deleteImage]:hover {
 	width: 150px;
 	text-align: justify;
 	display: inline-block;
-	padding: 5px;
-
+	padding: 0px;
 }
 
 .imageDiv img{
 	width: 100px;
 	height: 100px;
-	padding: 5px;
+	padding: 0px;
 
 }
 
@@ -78,7 +108,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #24478f;
+    background-color: #4d4d4d;
 }
 
 li {
@@ -137,5 +167,3 @@ li a:hover {
 .UserTabel td:last-child {
 	text-align:center;
 }
-
-
