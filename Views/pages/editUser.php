@@ -12,8 +12,10 @@
 </div>
 <h1>Edit User</h1>
 <form action="UpdateUser" method="POST">
-    <div><label for="OldUserName">Old Username: </label><input  name="OldUsername" value=<?php echo $username; ?> readonly /> </div>
-    <div><label for="username">Username: </label><input name="Username" /> </div>
-    <button type="submit">Edit</button></div>
+    <div><label for="OldUserName">Old Username </label><input  name="OldUsername" value=<?php echo $username; ?> readonly /> </div>
+    <br/>
+    <div><label for="username">Username </label><input name="Username" /> </div>
+    <br/>
+    <button class="button" type="submit">Edit</button></div>
 </form>
 <?php require VIEW_DIR . "/footer.php";?>
