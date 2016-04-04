@@ -1,11 +1,6 @@
 <?php
 namespace App\Controller;
-/**
- * Created by PhpStorm.
- * User: Jens Schwee
- * Date: 20-03-2016
- * Time: 13:02
- */
+
 class GalleryController
 {
     private $pdo = null;

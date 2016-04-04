@@ -2,12 +2,6 @@
 
 namespace App\Model;
 
-/**
- * Created by PhpStorm.
- * User: Jens Schwee
- * Date: 20-03-2016
- * Time: 18:48
- */
 class User
 {
 

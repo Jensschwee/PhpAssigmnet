@@ -3,12 +3,6 @@ namespace App\Controller;
 
 use App\Controller\PDO;
 
-/**
- * Created by PhpStorm.
- * User: Jens Schwee
- * Date: 15-03-2016
- * Time: 14:49
- */
 class LoginController
 {
    private $pdo = null;

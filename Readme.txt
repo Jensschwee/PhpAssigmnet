@@ -1,14 +1,13 @@
-Dette projekt er udarbejdet af daols13 og jenss12.
-Det er udarbejdet som aflevering 1 i faget, internet technology (XI-IT1-U1-1-F16).
+Dette projekt er udarbejdet som første aflevering i internet technology (XI-IT1-U1-1-F16) af daols13 og jenss12
 
-For at oprette databasen skal sql'en CreatDatabase køres på database serveren.
+For at oprette databasen skal sql'en CreateDatabase køres på database serveren.
 
 For at databasen virker skal password'et rettes i Index.php filen.
-linjen der skal rettes i er denne:
+Følgende linje skal altså rettes:
 $pdo = new \App\Controller\PDO("root", "password",'mysql:dbname=phpserver;host=127.0.0.1');
 root password'et skal rettes.
 
-For at logge ind på selve siden benyt bruger navn og password:
+For at logge ind på selve siden kan man benytte følgende oplysninger:
 Brugernavn: admin
 Password: admin
 

@@ -14,7 +14,7 @@
 <form action="Upload" method="POST" enctype="multipart/form-data">
 	<div>
 		<label for="upload" class="custom-file-upload">
-			Choose A File
+			Browse Files...
 		</label>
 		<input id="upload" name="image" type="file" required/>
 	</div >
