@@ -43,6 +43,7 @@ class UploadController
                 $image = New Image($this->pdo,$file_tmp,$_POST['filename']);
                 $image->createImageToDB();
                 header('Location: Gallery');
+                exit;
             }else{
                 print_r($errors);
             }

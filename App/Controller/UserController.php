@@ -34,6 +34,7 @@ class UserController
             $user = new User($this->pdo, $_POST['Username'], $_POST['Password'], $_SESSION['username'], false);
             $user->createUserToDB();
             header('Location: ShowUsers');
+            exit;
         }
     }
 
@@ -54,6 +55,7 @@ class UserController
             $sth->execute();
         }
         header('Location: /ShowUsers');
+        exit;
     }
 
     public function showEditUser()
@@ -64,7 +66,10 @@ class UserController
             require VIEW_DIR . '/pages/editUser.php';
         }
         else
+        {
             header('Location: /ShowUsers');
+            exit;
+        }
     }
 
     public function updateUser()
@@ -77,6 +82,6 @@ class UserController
             $sth->execute();
         }
         header('Location: /ShowUsers');
-
+        exit;
     }
 }

@@ -35,5 +35,6 @@ class GalleryController
             $sth->execute();
         }
         header('Location: Gallery');
+        exit;
     }
 }
